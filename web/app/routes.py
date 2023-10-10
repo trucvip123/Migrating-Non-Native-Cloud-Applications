@@ -52,6 +52,7 @@ def attendees():
 @app.route('/Notifications')
 def notifications():
     notifications = Notification.query.order_by(Notification.id).all()
+    # print("notifications =", notifications)
     return render_template('notifications.html', notifications=notifications)
 
 @app.route('/Notification', methods=['POST', 'GET'])
@@ -62,7 +63,7 @@ def notification():
         notification.subject = request.form['subject']
         notification.status = 'Notifications submitted'
         notification.submitted_date = datetime.utcnow()
-
+        print("notification =", notification)
         try:
             db.session.add(notification)
             db.session.commit()
@@ -75,7 +76,7 @@ def notification():
 
             for attendee in attendees:
                 subject = '{}: {}'.format(attendee.first_name, notification.subject)
-                send_email(attendee.email, subject, notification.message)
+                # send_email(attendee.email, subject, notification.message)
 
             notification.completed_date = datetime.utcnow()
             notification.status = 'Notified {} attendees'.format(len(attendees))

@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "f466e498-5a42-462b-93ac-f8d2e4f18bb4",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=sfaUneNy/G22M3PaiH7Hy3dsGa54bvDW79iV+/bhtMXG7i3FXPrR/jNRb+KBCgSPWxLuGPc26ltc+ASt5t1oUg==",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=sfaUneNy/G22M3PaiH7Hy3dsGa54bvDW79iV+/bhtMXG7i3FXPrR/jNRb+KBCgSPWxLuGPc26ltc+ASt5t1oUg==",
+    "WEBSITE_CONTENTSHARE":"trucnvfunctionapp351952244b7c",
+    "MyDbConnection": "mongodb://trucnvcosmosdb:Nq7Q3VeK6wCyrDlaEzDmF3rvzpdE0QQofOxAAZeD03UnIoKK9YC76O55kTX0h1IJQf1aZc3AyFyqACDbPRzD5w==@trucnvcosmosdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@trucnvcosmosdb@",
+    "AzureWebJobsServiceBus": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=b7O/MtrNbA/F2mtb5PyQAoFcckJKiLY1O+ASbHiNds0="
+  }
+}
