@@ -10,12 +10,11 @@ class BaseConfig:
     DB_URL = 'postgresql://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER,pw=POSTGRES_PW,url=POSTGRES_URL,db=POSTGRES_DB)
     # postgres://trucnv%40trucnvserver:Lumia930@@trucnvserver.postgres.database.azure.com/postgres?sslmode=require
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI') or DB_URL
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     CONFERENCE_ID = 1
     SECRET_KEY = 'LWd2tzlprdGHCIPHTd4tp5SBFgDszm'
-    SERVICE_BUS_CONNECTION_STRING ='Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=b7O/MtrNbA/F2mtb5PyQAoFcckJKiLY1O+ASbHiNds0=' #TODO: Update value
+    SERVICE_BUS_CONNECTION_STRING ="Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=pVgOpG+He5/dMpoo2DEvA5tmXcaXOj1nW+ASbNgVtI0=;namespaceConnectionString=notificationqueue"
     SERVICE_BUS_QUEUE_NAME ='notificationqueue'
-    ADMIN_EMAIL_ADDRESS: 'trucvip132@gmail.com'
-    SENDGRID_API_KEY = '' #Configuration not required, required SendGrid Account
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True

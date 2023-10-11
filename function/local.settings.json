@@ -1,13 +1,18 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "APPINSIGHTS_INSTRUMENTATIONKEY": "f466e498-5a42-462b-93ac-f8d2e4f18bb4",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "a1ec3cfa-4afd-4bfb-8323-431e02a6c1ae",
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "FUNCTIONS_EXTENSION_VERSION": "~4",
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=sfaUneNy/G22M3PaiH7Hy3dsGa54bvDW79iV+/bhtMXG7i3FXPrR/jNRb+KBCgSPWxLuGPc26ltc+ASt5t1oUg==",
-    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=sfaUneNy/G22M3PaiH7Hy3dsGa54bvDW79iV+/bhtMXG7i3FXPrR/jNRb+KBCgSPWxLuGPc26ltc+ASt5t1oUg==",
-    "WEBSITE_CONTENTSHARE":"trucnvfunctionapp351952244b7c",
-    "MyDbConnection": "mongodb://trucnvcosmosdb:Nq7Q3VeK6wCyrDlaEzDmF3rvzpdE0QQofOxAAZeD03UnIoKK9YC76O55kTX0h1IJQf1aZc3AyFyqACDbPRzD5w==@trucnvcosmosdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@trucnvcosmosdb@",
-    "AzureWebJobsServiceBus": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=b7O/MtrNbA/F2mtb5PyQAoFcckJKiLY1O+ASbHiNds0="
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=Lud19TH3tmYXTfKGlI50XSrz4jjw244TCQSsjekVp+OsYGCuLQ9Rmo280ND/gy0s4UdhfeOZk0pO+AStHzzetQ==",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=Lud19TH3tmYXTfKGlI50XSrz4jjw244TCQSsjekVp+OsYGCuLQ9Rmo280ND/gy0s4UdhfeOZk0pO+AStHzzetQ==",
+    "WEBSITE_CONTENTSHARE":"trucnvfunctionapp248b79efb8c7",
+    "AzureWebJobsServiceBus": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=pVgOpG+He5/dMpoo2DEvA5tmXcaXOj1nW+ASbNgVtI0=;namespaceConnectionString=notificationqueue",
+    "DB_NAME": "techconfdb",
+    "DB_USER": "trucnv@trucnvserver",
+    "DB_PASSWORD": "Lumia930@",
+    "DB_HOST": "trucnvserver.postgres.database.azure.com",
+    "ADMIN_EMAIL_ADDRESS": "trucvip123@gmail.com",
+    "ADMIN_EMAIL_PW": "mgqoqdcgmuzhcqmy"
   }
 }
