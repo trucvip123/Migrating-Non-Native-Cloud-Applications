@@ -63,9 +63,44 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* | Basic | $43.55 |
+| *Azure Service Bus* | Basic | $0.01 |
+| *Azure App Service* | Premium V3 P1V3 | $113.15 |
+| *Azure Storage* | Basic | $0.10 |
+
+Here are explanations for each resource mentioned in my cost analysis:
+
+1/ Azure Postgres Database (Basic):
+This resource is an Azure Database for PostgreSQL, which is a managed database service. It's used to store and manage structured data for my application, such as attendees information, notifications.
+
+2/ Azure Service Bus (Basic):
+Azure Service Bus is a messaging service used for decoupling application components and enabling asynchronous communication. In my project, it may be used for queuing notification_id. The "Basic" tier is suitable for low to moderate message throughput suitable for admin.
+
+3/ Azure App Service (Premium V3 P1V3):
+Azure App Service is a Platform-as-a-Service (PaaS) offering for hosting web applications and APIs. It provides a scalable and managed environment for my web app, which is used for queuing notification_id. The "Premium V3 P1V3" tier is a high-performance option designed for production-level workloads.
+
+4/ Azure Storage (Basic):
+Azure Storage is used for storing unstructured data, such as files related to my application. The "Basic" tier provides a cost-effective storage solution for my project's needs.
+
+### Drawbacks of Previous Architecture:
+
+Limited Scalability: The previous architecture, which used a basic web app for both queuing emails and serving web traffic, had limited scalability. During peak periods, the web app could become overwhelmed, leading to performance degradation and potential downtime.
+
+Resource Contention: Resource contention was a significant issue, as email queuing and sending tasks competed with web traffic for resources. This resulted in suboptimal performance and increased latency for both web visitors and email processing.
+
+Inefficient Resource Utilization: The basic web app operated at a fixed resource level, even during low-traffic periods, leading to inefficient resource utilization and unnecessary costs.
+
+### Advantages of the Current Architecture:
+
+Enhanced Scalability: The current architecture, which combines a web app for queuing and Azure Function Apps for email processing, offers enhanced scalability. Azure Function Apps can automatically scale based on demand, ensuring that email processing can handle peak loads effectively without affecting web traffic.
+
+Resource Isolation: Resource isolation is a key advantage of the current architecture. By segregating email processing tasks in Azure Function Apps, resource contention is minimized, resulting in improved performance and responsiveness for both web traffic and email processing.
+
+Cost-Efficiency: The architecture's flexibility and scalability ensure cost-efficiency. Azure Function Apps can automatically adjust resources based on email volume, preventing overprovisioning during low-traffic periods and optimizing costs.
+
+
+*In summary, the current architecture leverages Azure resources to address the drawbacks of the previous architecture. It provides enhanced scalability, resource isolation, and cost-efficiency, ensuring a better user experience and more effective email processing. Azure's flexible and managed services play a key role in achieving these advantages.*
+
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+I've adopted a two-tier architecture: a web app for queuing notification_id and Azure Function Apps for listing attendees and sending emails. Selecting a production-level server SKU like "P1V3" (estimated $113.15) for my web app is generally a good approach when i have high performance, load, and usage requirements; while email sending costs are variable, depending on email volume and attendees. This choice ensures cost-efficiency for dynamic workloads and enhances overall performance and user experience.

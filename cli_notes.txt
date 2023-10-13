@@ -8,8 +8,9 @@ az group delete --name MyResourceGroup --yes --no-wait
 # Verify the Creation
 az group list --output table
 
+
 # Create the PostgreSQL Server
-az postgres server create --resource-group MyResourceGroup --name trucnvServer --location eastus --admin-user trucnv --admin-password Lumia930@ --sku-name GP_Gen5_2
+az postgres server create --resource-group MyResourceGroup --name trucnvServer --location eastus --admin-user trucnv --admin-password Lumia930@ --sku-name B_Gen5_1
 # Configure Firewall Rules
 az postgres server firewall-rule create --resource-group MyResourceGroup --server trucnvServer --name AllowMyIP --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
 # Create a Database
@@ -22,12 +23,25 @@ pg_restore --dbname=techconfdb -U trucnv@trucnvserver -h trucnvserver.postgres.d
 az servicebus namespace create --resource-group MyResourceGroup --name trucnvServicebus --location eastus
 # Create a Queue
 az servicebus queue create --resource-group MyResourceGroup --namespace-name trucnvServicebus --name notificationqueue
-# Get access Connection String
-az servicebus namespace authorization-rule keys list --resource-group MyResourceGroup --namespace-name trucnvServicebus --name RootManageSharedAccessKey --query primaryConnectionString --output tsv
+
 
 # Create an App Service Plan
 az appservice plan create --name trucnvPlan --resource-group MyResourceGroup --is-linux --sku B1 --number-of-workers 1 --location eastus
 # Verify the App Service Plan
 az appservice plan list --resource-group MyResourceGroup
-
+# Build web app flask
 az webapp up --sku B1 -n trucnvTechConf --resource-group MyResourceGroup --location eastus --runtime "PYTHON|3.8" 
+
+
+# Create a Storage Account
+az storage account create --resource-group MyResourceGroup --name trucnvstorage --location eastus --sku Standard_LRS
+# Verify the Creation
+az storage account list --resource-group MyResourceGroup --output table
+
+
+# Create an Azure Function App
+az functionapp create --resource-group MyResourceGroup --name TrucnvFunctionApp --storage-account trucnvstorage --consumption-plan-location eastus --runtime python --os-type Linux --functions-version 4
+# Verify the Creation
+az functionapp list --resource-group MyResourceGroup --output table
+# Deploy
+func azure functionapp publish TrucnvFunctionApp

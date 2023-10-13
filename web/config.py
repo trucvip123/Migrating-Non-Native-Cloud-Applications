@@ -13,7 +13,7 @@ class BaseConfig:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CONFERENCE_ID = 1
     SECRET_KEY = 'LWd2tzlprdGHCIPHTd4tp5SBFgDszm'
-    SERVICE_BUS_CONNECTION_STRING ="Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=pVgOpG+He5/dMpoo2DEvA5tmXcaXOj1nW+ASbNgVtI0=;namespaceConnectionString=notificationqueue"
+    SERVICE_BUS_CONNECTION_STRING ="Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=wwolv3MqgBJHaqVCwBYHfbGsTOgPHem2n+ASbJ5hbm4=;namespaceConnectionString=notificationqueue"
     SERVICE_BUS_QUEUE_NAME ='notificationqueue'
 
 class DevelopmentConfig(BaseConfig):

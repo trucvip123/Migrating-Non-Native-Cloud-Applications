@@ -52,7 +52,7 @@ def registration():
             else:
                 return render_template("registration.html")
     except Exception as e:
-        print(e)
+        logging.error(e)
 
 
 @app.route("/Attendees")
@@ -64,7 +64,6 @@ def attendees():
 @app.route("/Notifications")
 def notifications():
     notifications = Notification.query.order_by(Notification.id).all()
-    # print("notifications =", notifications)
     return render_template("notifications.html", notifications=notifications)
 
 
@@ -81,12 +80,12 @@ def notification():
             db.session.commit()
 
             notification_id = notification.id
-            print("** notification_id =", notification_id)
+            logging.info(f"** notification_id = {notification_id}")
             send_queue(notification_id)
 
             return redirect("/Notifications")
         except Exception as e:
-            print(e)
+            logging.error(e)
             traceback.print_exc()
             logging.error("log unable to save notification")
             return "An error occurred. Please try again later.", 500
@@ -98,11 +97,11 @@ def notification():
 def send_single_message(sender, notification_id):
     message = ServiceBusMessage(str(notification_id))
     sender.send_messages(message)
-    print("Sent a single message")
+    logging.debug("Sent a single message")
 
 
 def send_queue(notification_id):
-    print("Start send into queue...")
+    logging.debug("Start send into queue...")
     try:
         servicebus_client = ServiceBusClient.from_connection_string(
             conn_str=app.config.get("SERVICE_BUS_CONNECTION_STRING"),
@@ -115,4 +114,4 @@ def send_queue(notification_id):
             with sender:
                 send_single_message(sender, notification_id)
     except Exception as e:
-        print(e)
+        logging.error(e)

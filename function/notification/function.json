@@ -5,8 +5,7 @@
         "name": "msg",
         "type": "serviceBusTrigger",
         "direction": "in",
-        "queueName": "notificationqueue",
-        "namespaceConnectionString": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=pVgOpG+He5/dMpoo2DEvA5tmXcaXOj1nW+ASbNgVtI0=;EntityPath=notificationqueue"
+        "queueName": "notificationqueue"
       }
     ]
 }

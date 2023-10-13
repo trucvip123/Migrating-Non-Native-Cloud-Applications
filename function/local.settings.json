@@ -7,7 +7,7 @@
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=Lud19TH3tmYXTfKGlI50XSrz4jjw244TCQSsjekVp+OsYGCuLQ9Rmo280ND/gy0s4UdhfeOZk0pO+AStHzzetQ==",
     "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=trucnvstorage;AccountKey=Lud19TH3tmYXTfKGlI50XSrz4jjw244TCQSsjekVp+OsYGCuLQ9Rmo280ND/gy0s4UdhfeOZk0pO+AStHzzetQ==",
     "WEBSITE_CONTENTSHARE":"trucnvfunctionapp248b79efb8c7",
-    "AzureWebJobsServiceBus": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=pVgOpG+He5/dMpoo2DEvA5tmXcaXOj1nW+ASbNgVtI0=;namespaceConnectionString=notificationqueue",
+    "AzureWebJobsServiceBus": "Endpoint=sb://trucnvservicebus.servicebus.windows.net/;SharedAccessKeyName=trucnvpolicy;SharedAccessKey=wwolv3MqgBJHaqVCwBYHfbGsTOgPHem2n+ASbJ5hbm4=;namespaceConnectionString=notificationqueue",
     "DB_NAME": "techconfdb",
     "DB_USER": "trucnv@trucnvserver",
     "DB_PASSWORD": "Lumia930@",
